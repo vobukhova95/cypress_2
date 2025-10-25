@@ -1,0 +1,11 @@
+
+{
+    "navigationDay": ".page-nav__day",
+    "movieDate": ".page-nav__day:nth-of-type(4)",
+    "sectionMovie": "section.movie",
+    "movieHall": "div.movie-seances__hall",
+    "movieHallTitle": "h3.movie-seances__hall-title",
+    "movieTime": "a.movie-seances__time",
+    "acceptinButton": ".acceptin-button"
+
+}

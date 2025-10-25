@@ -1,0 +1,15 @@
+{
+  "name": "cypress_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --record --key 3ee3344e-db79-4ecb-962a-521260896e8c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^15.5.0"
+  }
+}
