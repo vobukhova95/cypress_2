@@ -5,16 +5,20 @@ const mainPageSelectors = require("../fixtures/mainPageSelectors.json");
 
 describe('Booking tickets tests', () => {
 	it('Should check the hall from the admin page and book tickets', () => {
+        const movieName = 'Ведьмак';
+		const hallName = 'Вип зал';
+        const acceptinButtonText = 'Получить код бронирования';
+
 		cy.visit('https://qamid.tmweb.ru/admin/');
 		cy.login(user.validEmail, user.validPassword);
 		cy.get(adminPageSelectors.movie)
-			.should('have.text', 'Ведьмак');
+			.should('have.text', movieName);
 		cy.get(adminPageSelectors).invoke('text').then((text) => {
 			cy.visit('https://qamid.tmweb.ru/client/index.php');
 			cy.get(mainPageSelectors.movieDate).click();
-			cy.contains(mainPageSelectors.sectionMovie, 'Ведьмак')
+			cy.contains(mainPageSelectors.sectionMovie, movieName)
 				.find(mainPageSelectors.movieHall)
-				.contains(mainPageSelectors.movieHallTitle, 'Вип зал')
+				.contains(mainPageSelectors.movieHallTitle, hallName)
 				.parent()
 				.find(mainPageSelectors.movieTime)
 				.contains('20:00')
@@ -26,7 +30,7 @@ describe('Booking tickets tests', () => {
 			});
 			cy.get(mainPageSelectors.acceptinButton).click();
 			cy.get(mainPageSelectors.acceptinButton)
-				.should('have.text', 'Получить код бронирования')
+				.should('have.text', acceptinButtonText)
 				.and('be.visible').and('not.be.disabled');
 		});
 	});
