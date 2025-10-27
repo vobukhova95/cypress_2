@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --record --key 3ee3344e-db79-4ecb-962a-521260896e8c"
+    "cy:adminAuth": "npx cypress run --group admin --ci-build-id 10 --spec cypress/e2e/adminAuth.cy.js --record --key 3ee3344e-db79-4ecb-962a-521260896e8c",
+    "cy:mainPage": "npx cypress run --group main --ci-build-id 10 --spec cypress/e2e/mainPage.cy.js --record --key 3ee3344e-db79-4ecb-962a-521260896e8c",
+    "cy:movieBooking": "npx cypress run --group movieBooking --ci-build-id 10 --spec cypress/e2e/movieBooking.cy.js --record --key 3ee3344e-db79-4ecb-962a-521260896e8c"
   },
   "keywords": [],
   "author": "",
